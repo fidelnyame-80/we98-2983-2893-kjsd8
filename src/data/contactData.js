@@ -1,20 +1,11 @@
 export const contactMethods = [
   {
-    key: "facebook",
-    label: "Facebook",
-    href: "https://facebook.com/placeholder",
-    description:
-      "Follow i-Able Rehabilitation for success stories, service updates, and practical rehab insights that keep families informed and inspired.",
-    actionLabel: "Follow us on Facebook",
-    isExternal: true,
-  },
-  {
     key: "whatsapp",
     label: "WhatsApp",
     href: "https://wa.me/233209865603",
     description:
-      "Send us a WhatsApp message for quick answers, appointment availability, and guidance on the right support for you or your loved one.",
-    actionLabel: "Message us on WhatsApp",
+      "Send us a WhatsApp message for appointment availability, service guidance, and quick support from the i-Able team.",
+    actionLabel: "WhatsApp +233 20 986 5603",
     isExternal: true,
   },
   {
@@ -22,8 +13,8 @@ export const contactMethods = [
     label: "Call",
     href: "tel:+233209865603",
     description:
-      "Speak directly with our team for immediate help, clear service guidance, and fast support with booking your appointment.",
-    actionLabel: "Call our team",
+      "Speak directly with our team for help choosing the right service and booking a convenient appointment time.",
+    actionLabel: "Call +233 20 986 5603",
     isExternal: false,
   },
 ];

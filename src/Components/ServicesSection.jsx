@@ -106,7 +106,7 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="mx-auto mb-12 max-w-3xl text-center lg:mb-14"
         >
-          <span className="text-xs font-semibold tracking-widest uppercase text-yellow-500">
+          <span className="text-xl font-semibold tracking-widest uppercase text-yellow-600">
             What We Do
           </span>
 

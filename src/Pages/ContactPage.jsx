@@ -6,8 +6,6 @@ import {
   BadgeCheck,
   CalendarDays,
   Clock3,
-  Globe,
-  MapPin,
   MessageCircle,
   PhoneCall,
   Send,
@@ -23,7 +21,6 @@ import {
 const MotionDiv = motion.div;
 
 const contactIcons = {
-  facebook: Globe,
   whatsapp: MessageCircle,
   call: PhoneCall,
 };
@@ -85,36 +82,34 @@ const ContactPage = () => {
               </span>
 
               <h1 className="mt-5 max-w-[12ch] text-[2.6rem] font-bold leading-[1.05] text-slate-950 sm:max-w-none sm:text-5xl lg:text-6xl">
-                Book an appointment and reach us through the channels your
-                clients already use.
+                Book an appointment with i-Able Rehabilitation.
               </h1>
 
               <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 lg:text-lg">
-                This page gives visitors a clear way to contact i-Able
-                Rehabilitation, explore your social channels, and send an
-                appointment request from one place.
+                Request a session, ask a question, or speak with our team
+                directly by WhatsApp or phone.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-3xl border border-white/70 bg-white/80 p-4 shadow-[0_20px_50px_-30px_rgba(15,23,42,0.35)] backdrop-blur-sm">
                   <CalendarDays className="h-5 w-5 text-yellow-600" />
                   <p className="mt-4 text-sm font-semibold text-slate-950">
-                    Appointment-ready
+                    Direct booking
                   </p>
                   <p className="mt-1 text-sm leading-6 text-slate-600">
-                    Visitors can submit a booking request without leaving the
-                    site.
+                    Share the details we need to prepare for your first
+                    conversation.
                   </p>
                 </div>
 
                 <div className="rounded-3xl border border-white/70 bg-white/80 p-4 shadow-[0_20px_50px_-30px_rgba(15,23,42,0.35)] backdrop-blur-sm">
                   <MessageCircle className="h-5 w-5 text-yellow-600" />
                   <p className="mt-4 text-sm font-semibold text-slate-950">
-                    Social-first contact
+                    WhatsApp support
                   </p>
                   <p className="mt-1 text-sm leading-6 text-slate-600">
-                    Facebook, WhatsApp, and call links are ready for your real
-                    details.
+                    Message us at +233 20 986 5603 for quick appointment
+                    support.
                   </p>
                 </div>
 
@@ -124,8 +119,8 @@ const ContactPage = () => {
                     Fast follow-up
                   </p>
                   <p className="mt-1 text-sm leading-6 text-slate-600">
-                    Use the form to capture the basics before you confirm an
-                    appointment.
+                    Our team will contact you to confirm the best available
+                    session time.
                   </p>
                 </div>
               </div>
@@ -146,11 +141,11 @@ const ContactPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
                 <div className="absolute left-6 right-6 bottom-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-yellow-300">
-                    Contact Experience
+                    Book A Session
                   </p>
                   <p className="mt-3 max-w-lg text-2xl font-semibold leading-tight text-white">
-                    A dedicated booking page gives families, caregivers, and
-                    partners one clear next step.
+                    Families, caregivers, and partners have one clear path to
+                    begin care.
                   </p>
                 </div>
               </div>
@@ -176,7 +171,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-yellow-600">
-                      Social Channels
+                      Contact Channels
                     </p>
                     <h2 className="mt-1 text-2xl font-semibold text-slate-950">
                       Reach us your way
@@ -249,21 +244,21 @@ const ContactPage = () => {
                   ))}
                 </div>
 
-                <div className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-4">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-yellow-300" />
-                    <div>
-                      <p className="text-sm font-semibold text-white">
-                        Contact page only
-                      </p>
-                      <p className="mt-1 text-sm leading-6 text-white/70">
-                        Your placeholder links are already connected here, so you
-                        can swap in your real Facebook, WhatsApp, and phone
-                        details later without changing the layout.
-                      </p>
-                    </div>
+                <a
+                  href="tel:+233209865603"
+                  className="mt-6 flex items-start gap-3 rounded-3xl border border-white/10 bg-white/5 p-4 transition hover:border-yellow-300/40 hover:bg-white/10"
+                >
+                  <PhoneCall className="mt-0.5 h-5 w-5 shrink-0 text-yellow-300" />
+                  <div>
+                    <p className="text-sm font-semibold text-white">
+                      +233 20 986 5603
+                    </p>
+                    <p className="mt-1 text-sm leading-6 text-white/70">
+                      Use this number for both WhatsApp messages and direct
+                      calls.
+                    </p>
                   </div>
-                </div>
+                </a>
               </div>
             </MotionDiv>
 
@@ -284,8 +279,8 @@ const ContactPage = () => {
                     Request a session
                   </h2>
                   <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
-                    Collect the key details here, then follow up with the person
-                    through phone or WhatsApp to confirm the appointment.
+                    Share the key details here, and our team will follow up by
+                    phone or WhatsApp to confirm the appointment.
                   </p>
                 </div>
 
@@ -308,7 +303,6 @@ const ContactPage = () => {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      placeholder="Enter full name"
                       className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-yellow-400 focus:bg-white"
                     />
                   </label>
@@ -321,7 +315,6 @@ const ContactPage = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      placeholder="Enter phone number"
                       className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-yellow-400 focus:bg-white"
                     />
                   </label>
@@ -333,7 +326,6 @@ const ContactPage = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="Enter email address"
                       className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-yellow-400 focus:bg-white"
                     />
                   </label>
@@ -387,15 +379,14 @@ const ContactPage = () => {
                     value={formData.notes}
                     onChange={handleChange}
                     rows="5"
-                    placeholder="Share any details that would help us prepare for the appointment."
                     className="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-6 text-slate-900 outline-none transition focus:border-yellow-400 focus:bg-white"
                   />
                 </label>
 
                 {isSubmitted && (
                   <div className="mt-6 rounded-3xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm leading-6 text-emerald-800">
-                    Appointment request captured. Replace this placeholder flow
-                    with your real submission endpoint whenever you are ready.
+                    Appointment request received. Our team will contact you
+                    shortly to confirm availability.
                   </div>
                 )}
 

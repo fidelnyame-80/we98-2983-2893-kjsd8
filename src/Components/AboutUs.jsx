@@ -55,13 +55,13 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-xs font-semibold tracking-widest uppercase text-yellow-500">
+            <span className="lg:text-lg text-xl font-semibold tracking-widest uppercase text-yellow-600 ">
               Our Aim
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mt-3 mb-5 leading-tight">
+            <h2 className="lg:text-3xl text-4xl lg:text-5xl font-bold text-black mt-3 mb-5 leading-tight font-[serif] ">
               Advancing{" "}
-              <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent italic">
+              <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent italic">
                 Functional Independence
               </span>{" "}
               Through Coordinated Rehabilitation

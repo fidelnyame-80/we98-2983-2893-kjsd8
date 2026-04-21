@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Images } from "../assets/Images/Images";
 
 const MotionDiv = motion.div;
@@ -30,9 +31,9 @@ const HeroSection = () => {
         >
          
 
-          <h1 className="max-w-4xl text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.02] tracking-tight mb-4">
+          <h1 className="max-w-4xl text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.02] tracking-tight mb-4 font-[serif]">
             i-Able{" "}
-            <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent italic">
+            <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent italic font-[serif]">
               Rehabilitation
             </span>
           </h1>
@@ -49,18 +50,18 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold text-base hover:opacity-90 transition"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-black/75 text-white font-semibold text-base backdrop-blur-sm hover:bg-black/90 transition"
             >
               Explore Services
               <ArrowRight className="w-5 h-5" />
             </a>
 
-            <a
-              href="#outcomes"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-yellow-400/40 bg-black/25 text-white font-semibold text-base backdrop-blur-sm hover:bg-black/40 transition"
+            <Link
+              to="/contact#appointment-form"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-semibold text-base hover:opacity-90 transition"
             >
-              View Outcomes
-            </a>
+              Book an Appointment
+            </Link>
           </div>
         </MotionDiv>
       </div>

@@ -93,7 +93,7 @@ const OutcomesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <span className="text-xs font-semibold tracking-widest uppercase text-yellow-500">
+          <span className="text-xl font-semibold tracking-widest uppercase text-yellow-500">
             Expected Outcomes
           </span>
 
