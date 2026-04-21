@@ -46,7 +46,10 @@ const MotionDiv = motion.div;
 
 const AboutSection = () => {
   return (
-    <section id="aim" className="scroll-mt-24 py-16 lg:py-20 bg-[#f5f5f5]">
+    <section
+      id="aim"
+      className="scroll-mt-24 border-t border-white/10 bg-[#070707] py-16 lg:py-20"
+    >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <MotionDiv
@@ -55,33 +58,33 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="lg:text-lg text-xl font-semibold tracking-widest uppercase text-yellow-600 ">
+            <span className="lg:text-lg text-xl font-semibold tracking-widest uppercase text-yellow-300">
               Our Aim
             </span>
 
-            <h2 className="lg:text-3xl text-4xl lg:text-5xl font-bold text-black mt-3 mb-5 leading-tight font-[serif] ">
+            <h2 className="font-heading lg:text-3xl text-4xl lg:text-5xl font-bold text-white mt-3 mb-5 leading-tight">
               Advancing{" "}
-              <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent italic">
+              <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent italic">
                 Functional Independence
               </span>{" "}
               Through Coordinated Rehabilitation
             </h2>
 
-            <p className="text-gray-700 text-base lg:text-lg leading-relaxed mb-5">
+            <p className="text-white/82 text-base lg:text-lg leading-relaxed mb-5">
               i-Able Rehabilitation exists to advance holistic,
               interdisciplinary rehabilitation practices across the lifespan.
               We focus on meaningful participation at home, in school, at work,
               and in the community.
             </p>
 
-            <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-5">
+            <p className="text-white/68 text-sm lg:text-base leading-relaxed mb-5">
               Our team brings together occupational therapists,
               physiotherapists, speech therapists, and learning disability
               specialists to design coordinated care pathways that respond to
               physical, cognitive, communicative, and psychosocial needs.
             </p>
 
-            <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-7">
+            <p className="text-white/68 text-sm lg:text-base leading-relaxed mb-7">
               We work alongside families, schools, caregivers, and employers to
               create supportive environments where rehabilitation gains can be
               sustained beyond the clinic.
@@ -92,10 +95,10 @@ const AboutSection = () => {
                 <Award className="w-5 h-5 text-white" />
               </div>
               <div>
-                <p className="font-semibold text-black text-sm">
+                <p className="font-semibold text-white text-sm">
                   Interdisciplinary teamwork at the core
                 </p>
-                <p className="text-xs text-gray-500 leading-relaxed">
+                <p className="text-xs text-white/58 leading-relaxed">
                   Integrated care pathways help each person receive support that
                   is connected, practical, and focused on real-life outcomes.
                 </p>
@@ -118,28 +121,28 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-yellow-300 hover:shadow-md transition-all duration-300 group"
+                className="group overflow-hidden rounded-xl border border-white/10 bg-white/[0.055] transition-all duration-300 hover:border-yellow-300/70 hover:bg-white/[0.08] hover:shadow-[0_24px_60px_-36px_rgba(234,179,8,0.55)]"
               >
-                <div className="relative h-28 overflow-hidden bg-gray-100">
+                <div className="relative h-28 overflow-hidden bg-black">
                   <img
                     src={image}
                     alt={imageAlt}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/5 to-transparent" />
-                  <div className="absolute left-4 bottom-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/95 shadow-sm">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute left-4 bottom-4 flex h-10 w-10 items-center justify-center rounded-full bg-black/85 shadow-sm ring-1 ring-yellow-300/35 backdrop-blur-sm">
                     {createElement(icon, {
                       className:
-                        "w-5 h-5 text-yellow-500 transition group-hover:scale-110",
+                        "w-5 h-5 text-yellow-300 transition group-hover:scale-110",
                     })}
                   </div>
                 </div>
 
                 <div className="p-5 pt-4">
-                  <p className="text-sm font-semibold text-black leading-snug">
+                  <p className="text-sm font-semibold text-white leading-snug">
                     {title}
                   </p>
-                  <p className="text-xs text-gray-500 mt-2 leading-relaxed">
+                  <p className="text-xs text-white/58 mt-2 leading-relaxed">
                     {description}
                   </p>
                 </div>

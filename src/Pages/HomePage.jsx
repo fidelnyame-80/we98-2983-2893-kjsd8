@@ -5,7 +5,7 @@ import ServicesSection from "../Components/ServicesSection";
 
 const HomePage = () => {
   return (
-    <main>
+    <main className="bg-[#050505] text-white">
       <HeroSection />
       <AboutSection />
       <ServicesSection />

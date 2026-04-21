@@ -86,16 +86,16 @@ const ServicesSection = () => {
   return (
     <section
       id="services"
-      className="relative scroll-mt-24 overflow-hidden bg-[#faf7ef] py-16 lg:py-24"
+      className="relative scroll-mt-24 overflow-hidden border-t border-white/10 bg-[#050505] py-16 lg:py-24"
     >
-      <div className="absolute inset-x-0 top-0 h-56 bg-[radial-gradient(circle_at_top,rgba(250,204,21,0.22),transparent_60%)]" />
+      <div className="absolute inset-x-0 top-0 h-56 bg-[radial-gradient(circle_at_top,rgba(250,204,21,0.16),transparent_60%)]" />
       <div
         aria-hidden="true"
-        className="absolute left-0 top-24 h-48 w-48 rounded-full bg-yellow-200/25 blur-3xl"
+        className="absolute left-0 top-24 h-48 w-48 rounded-full bg-yellow-500/10 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="absolute right-0 bottom-16 h-64 w-64 rounded-full bg-amber-100/40 blur-3xl"
+        className="absolute right-0 bottom-16 h-64 w-64 rounded-full bg-amber-400/10 blur-3xl"
       />
 
       <div className="relative container mx-auto px-4 lg:px-8">
@@ -106,18 +106,18 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="mx-auto mb-12 max-w-3xl text-center lg:mb-14"
         >
-          <span className="text-xl font-semibold tracking-widest uppercase text-yellow-600">
+          <span className="text-xl font-semibold tracking-widest uppercase text-yellow-300">
             What We Do
           </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mt-3 mb-3 leading-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 mb-3 leading-tight">
             Rehabilitation services that connect{" "}
-            <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent italic">
+            <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent italic">
               people, systems, and outcomes
             </span>
           </h2>
 
-          <p className="text-gray-600 text-base lg:text-lg">
+          <p className="text-white/68 text-base lg:text-lg">
             Our work combines direct therapy, school and workplace inclusion,
             collaborative care planning, and caregiver support to promote
             long-term functional independence.
@@ -133,7 +133,7 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-black/5 bg-white shadow-[0_20px_60px_-28px_rgba(15,23,42,0.35)] transition-all duration-500 hover:-translate-y-1 hover:border-yellow-300/80 hover:shadow-[0_28px_80px_-32px_rgba(217,119,6,0.35)]"
+              className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/10 bg-[#101010] shadow-[0_20px_70px_-42px_rgba(0,0,0,0.9)] transition-all duration-500 hover:-translate-y-1 hover:border-yellow-300/70 hover:shadow-[0_28px_80px_-38px_rgba(234,179,8,0.32)]"
             >
               <div className="relative h-56 overflow-hidden bg-slate-900">
                 <img
@@ -145,7 +145,7 @@ const ServicesSection = () => {
                 <div className="absolute left-4 top-4 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md">
                   {label}
                 </div>
-                <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-white/92 text-yellow-600 shadow-lg ring-1 ring-black/5 backdrop-blur-sm">
+                <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-black/80 text-yellow-300 shadow-lg ring-1 ring-yellow-300/25 backdrop-blur-sm">
                   {createElement(icon, {
                     className: "h-5 w-5",
                   })}
@@ -154,25 +154,25 @@ const ServicesSection = () => {
 
               <div className="flex flex-1 flex-col p-5 sm:p-6">
                 <div className="mb-3 flex items-center gap-3">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-yellow-600">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-yellow-300">
                     Service {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="h-px flex-1 bg-gradient-to-r from-yellow-300/80 to-transparent" />
                 </div>
 
-                <h3 className="text-xl font-semibold leading-tight text-slate-950">
+                <h3 className="font-heading text-xl font-semibold leading-tight text-white">
                   {title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-slate-600">
+                <p className="mt-3 text-sm leading-7 text-white/64">
                   {description}
                 </p>
 
-                <div className="mt-5 rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200/70">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                <div className="mt-5 rounded-2xl bg-black/45 px-4 py-3 ring-1 ring-white/10">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-yellow-200/80">
                     Care Focus
                   </p>
-                  <p className="mt-1 text-sm leading-6 text-slate-700">
+                  <p className="mt-1 text-sm leading-6 text-white/72">
                     {focus}
                   </p>
                 </div>

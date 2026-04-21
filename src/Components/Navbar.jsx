@@ -20,7 +20,7 @@ const Navbar = () => {
   const isContactPage = location.pathname === "/contact";
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/88 backdrop-blur-xl">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link
@@ -45,8 +45,8 @@ const Navbar = () => {
                   (!isContactPage &&
                     location.pathname === "/" &&
                     location.hash === link.to.replace("/", ""))
-                    ? "text-yellow-600"
-                    : "text-gray-500 hover:text-yellow-600"
+                    ? "text-yellow-300"
+                    : "text-white/70 hover:text-yellow-300"
                 }`}
               >
                 {link.label}
@@ -64,7 +64,7 @@ const Navbar = () => {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-black"
+            className="md:hidden rounded-full border border-white/10 p-2 text-white"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -78,7 +78,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-gray-200 overflow-hidden"
+            className="md:hidden overflow-hidden border-b border-white/10 bg-black/95"
           >
             <div className="px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -86,7 +86,7 @@ const Navbar = () => {
                   key={link.label}
                   to={link.to}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-gray-700 py-2 border-b border-gray-200 hover:text-yellow-600"
+                  className="border-b border-white/10 py-2 text-lg font-medium text-white/75 hover:text-yellow-300"
                 >
                   {link.label}
                 </Link>

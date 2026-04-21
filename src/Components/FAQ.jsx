@@ -85,7 +85,10 @@ const OutcomesSection = () => {
   };
 
   return (
-    <section id="outcomes" className="scroll-mt-24 py-16 lg:py-20 bg-[#f7f7f7]">
+    <section
+      id="outcomes"
+      className="scroll-mt-24 border-t border-white/10 bg-[#080808] py-16 lg:py-20"
+    >
       <div className="container mx-auto px-4 lg:px-8">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
@@ -93,18 +96,18 @@ const OutcomesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <span className="text-xl font-semibold tracking-widest uppercase text-yellow-500">
+          <span className="text-xl font-semibold tracking-widest uppercase text-yellow-300">
             Expected Outcomes
           </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mt-3 mb-3">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 mb-3">
             From coordinated inputs to{" "}
-            <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent italic">
+            <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent italic">
               long-term impact
             </span>
           </h2>
 
-          <p className="text-gray-600 text-base lg:text-lg">
+          <p className="text-white/68 text-base lg:text-lg">
             Each focus area is designed with clear inputs, practical activities,
             measurable outputs, and outcomes that strengthen independence over
             time.
@@ -115,42 +118,42 @@ const OutcomesSection = () => {
           {outcomeTracks.map((item, index) => (
             <div
               key={item.title}
-              className="border border-gray-200 rounded-lg bg-white"
+              className="rounded-lg border border-white/10 bg-[#111111]"
             >
               <button
                 onClick={() => toggle(index)}
                 className="w-full text-left px-5 py-4 flex justify-between items-center gap-4"
               >
-                <span className="font-semibold text-black text-sm lg:text-base">
+                <span className="font-semibold text-white text-sm lg:text-base">
                   {item.title}
                 </span>
-                <span className="text-yellow-500 text-lg shrink-0">
+                <span className="text-yellow-300 text-lg shrink-0">
                   {openIndex === index ? "-" : "+"}
                 </span>
               </button>
 
               {openIndex === index && (
-                <div className="px-5 pb-5 text-sm text-gray-600 leading-relaxed space-y-3">
+                <div className="px-5 pb-5 text-sm text-white/66 leading-relaxed space-y-3">
                   <p>
-                    <span className="font-semibold text-black">Inputs:</span>{" "}
+                    <span className="font-semibold text-white">Inputs:</span>{" "}
                     {item.inputs}
                   </p>
                   <p>
-                    <span className="font-semibold text-black">Activities:</span>{" "}
+                    <span className="font-semibold text-white">Activities:</span>{" "}
                     {item.activity}
                   </p>
                   <p>
-                    <span className="font-semibold text-black">Outputs:</span>{" "}
+                    <span className="font-semibold text-white">Outputs:</span>{" "}
                     {item.outputs}
                   </p>
                   <p>
-                    <span className="font-semibold text-black">
+                    <span className="font-semibold text-white">
                       Short-term outcomes:
                     </span>{" "}
                     {item.shortTerm}
                   </p>
                   <p>
-                    <span className="font-semibold text-black">
+                    <span className="font-semibold text-white">
                       Long-term outcomes:
                     </span>{" "}
                     {item.longTerm}

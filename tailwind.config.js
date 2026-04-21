@@ -2,9 +2,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["Playfair Display", "serif"],
-        serif: ["Cormorant Garamond"],
-        body: ["Inter", "sans-serif"],
+        heading: ["Lora", "Georgia", "serif"],
+        serif: ["Lora", "Georgia", "serif"],
+        body: ["Manrope", "Inter", "sans-serif"],
+        sans: ["Manrope", "Inter", "sans-serif"],
       },
     },
   },

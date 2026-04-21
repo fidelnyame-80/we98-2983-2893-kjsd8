@@ -36,7 +36,7 @@ const footerContactLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-14">
+    <footer className="border-t border-white/10 bg-black py-14 text-white">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mb-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div>
@@ -53,20 +53,20 @@ const Footer = () => {
               </div>
             </div>
 
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-white/58 text-sm leading-relaxed max-w-xs">
               Holistic, interdisciplinary rehabilitation that promotes
               functional independence across all age groups.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Quick Links</h4>
+            <h4 className="mb-4 text-sm font-semibold text-white">Quick Links</h4>
             <div className="flex flex-col gap-2">
               {quickLinks.map((link) => (
                 <Link
                   key={link.label}
                   to={link.to}
-                  className="text-sm text-gray-400 hover:text-yellow-500 transition"
+                  className="text-sm text-white/55 transition hover:text-yellow-300"
                 >
                   {link.label}
                 </Link>
@@ -75,10 +75,10 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Core Focus</h4>
+            <h4 className="mb-4 text-sm font-semibold text-white">Core Focus</h4>
             <div className="flex flex-col gap-2">
               {coreFocus.map((item) => (
-                <span key={item} className="text-sm text-gray-400">
+                <span key={item} className="text-sm text-white/55">
                   {item}
                 </span>
               ))}
@@ -86,10 +86,10 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Collaborative Care</h4>
+            <h4 className="mb-4 text-sm font-semibold text-white">Collaborative Care</h4>
             <div className="flex flex-col gap-2">
               {collaborativeApproach.map((item) => (
-                <span key={item} className="text-sm text-gray-400">
+                <span key={item} className="text-sm text-white/55">
                   {item}
                 </span>
               ))}
@@ -97,7 +97,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Contact Us</h4>
+            <h4 className="mb-4 text-sm font-semibold text-white">Contact Us</h4>
             <div className="flex flex-col gap-2">
               {footerContactLinks.map((item) => {
                 if (item.isInternal) {
@@ -105,7 +105,7 @@ const Footer = () => {
                     <Link
                       key={item.label}
                       to={item.to}
-                      className="text-sm text-gray-400 hover:text-yellow-500 transition"
+                      className="text-sm text-white/55 transition hover:text-yellow-300"
                     >
                       {item.label}
                     </Link>
@@ -118,7 +118,7 @@ const Footer = () => {
                     href={item.href}
                     target={item.isExternal ? "_blank" : undefined}
                     rel={item.isExternal ? "noreferrer" : undefined}
-                    className="text-sm text-gray-400 hover:text-yellow-500 transition"
+                    className="text-sm text-white/55 transition hover:text-yellow-300"
                   >
                     {item.label}
                   </a>
@@ -128,8 +128,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-6 text-center">
-          <p className="text-xs text-gray-500">
+        <div className="border-t border-white/10 pt-6 text-center">
+          <p className="text-xs text-white/42">
             Copyright {new Date().getFullYear()} i-Able Rehabilitation (Danpet
             Rehab Center). All rights reserved.
           </p>

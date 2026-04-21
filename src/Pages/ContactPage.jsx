@@ -57,15 +57,15 @@ const ContactPage = () => {
   };
 
   return (
-    <main className="relative overflow-x-clip bg-[#fffaf1] pt-24">
-      <div className="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top,rgba(250,204,21,0.22),transparent_58%)]" />
+    <main className="relative overflow-x-clip bg-[#050505] pt-24">
+      <div className="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top,rgba(250,204,21,0.16),transparent_58%)]" />
       <div
         aria-hidden="true"
-        className="absolute left-0 top-40 h-52 w-52 rounded-full bg-yellow-200/30 blur-3xl"
+        className="absolute left-0 top-40 h-52 w-52 rounded-full bg-yellow-500/10 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="absolute right-0 top-28 h-64 w-64 rounded-full bg-amber-100/40 blur-3xl"
+        className="absolute right-0 top-28 h-64 w-64 rounded-full bg-amber-400/10 blur-3xl"
       />
 
       <section className="relative pb-10 pt-8 lg:pb-14 lg:pt-12">
@@ -77,48 +77,48 @@ const ContactPage = () => {
               transition={{ duration: 0.6 }}
               className="min-w-0 max-w-3xl"
             >
-              <span className="inline-flex items-center gap-2 rounded-full border border-yellow-300/70 bg-yellow-100/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-yellow-700">
+              <span className="inline-flex items-center gap-2 rounded-full border border-yellow-300/40 bg-yellow-300/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-yellow-300">
                 Contact Us
               </span>
 
-              <h1 className="mt-5 max-w-[12ch] text-[2.6rem] font-bold leading-[1.05] text-slate-950 sm:max-w-none sm:text-5xl lg:text-6xl">
+              <h1 className="mt-5 max-w-[12ch] font-heading text-[2.6rem] font-bold leading-[1.05] text-white sm:max-w-none sm:text-5xl lg:text-6xl">
                 Book an appointment with i-Able Rehabilitation.
               </h1>
 
-              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 lg:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-8 text-white/70 lg:text-lg">
                 Request a session, ask a question, or speak with our team
                 directly by WhatsApp or phone.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-3xl border border-white/70 bg-white/80 p-4 shadow-[0_20px_50px_-30px_rgba(15,23,42,0.35)] backdrop-blur-sm">
-                  <CalendarDays className="h-5 w-5 text-yellow-600" />
-                  <p className="mt-4 text-sm font-semibold text-slate-950">
+                <div className="rounded-3xl border border-white/10 bg-white/[0.055] p-4 shadow-[0_20px_50px_-36px_rgba(0,0,0,0.9)] backdrop-blur-sm">
+                  <CalendarDays className="h-5 w-5 text-yellow-300" />
+                  <p className="mt-4 text-sm font-semibold text-white">
                     Direct booking
                   </p>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">
+                  <p className="mt-1 text-sm leading-6 text-white/60">
                     Share the details we need to prepare for your first
                     conversation.
                   </p>
                 </div>
 
-                <div className="rounded-3xl border border-white/70 bg-white/80 p-4 shadow-[0_20px_50px_-30px_rgba(15,23,42,0.35)] backdrop-blur-sm">
-                  <MessageCircle className="h-5 w-5 text-yellow-600" />
-                  <p className="mt-4 text-sm font-semibold text-slate-950">
+                <div className="rounded-3xl border border-white/10 bg-white/[0.055] p-4 shadow-[0_20px_50px_-36px_rgba(0,0,0,0.9)] backdrop-blur-sm">
+                  <MessageCircle className="h-5 w-5 text-yellow-300" />
+                  <p className="mt-4 text-sm font-semibold text-white">
                     WhatsApp support
                   </p>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">
+                  <p className="mt-1 text-sm leading-6 text-white/60">
                     Message us at +233 20 986 5603 for quick appointment
                     support.
                   </p>
                 </div>
 
-                <div className="rounded-3xl border border-white/70 bg-white/80 p-4 shadow-[0_20px_50px_-30px_rgba(15,23,42,0.35)] backdrop-blur-sm">
-                  <Clock3 className="h-5 w-5 text-yellow-600" />
-                  <p className="mt-4 text-sm font-semibold text-slate-950">
+                <div className="rounded-3xl border border-white/10 bg-white/[0.055] p-4 shadow-[0_20px_50px_-36px_rgba(0,0,0,0.9)] backdrop-blur-sm">
+                  <Clock3 className="h-5 w-5 text-yellow-300" />
+                  <p className="mt-4 text-sm font-semibold text-white">
                     Fast follow-up
                   </p>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">
+                  <p className="mt-1 text-sm leading-6 text-white/60">
                     Our team will contact you to confirm the best available
                     session time.
                   </p>
@@ -130,7 +130,7 @@ const ContactPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.1 }}
-              className="min-w-0 overflow-hidden rounded-[32px] border border-black/5 bg-slate-950 shadow-[0_30px_80px_-34px_rgba(15,23,42,0.55)]"
+              className="min-w-0 overflow-hidden rounded-[32px] border border-white/10 bg-slate-950 shadow-[0_30px_80px_-38px_rgba(0,0,0,0.9)]"
             >
               <div className="relative h-72 overflow-hidden sm:h-80">
                 <img
@@ -164,16 +164,16 @@ const ContactPage = () => {
               transition={{ duration: 0.55 }}
               className="min-w-0 space-y-6"
             >
-              <div className="rounded-[30px] border border-black/5 bg-white p-6 shadow-[0_24px_70px_-40px_rgba(15,23,42,0.45)] sm:p-7">
+              <div className="rounded-[30px] border border-white/10 bg-[#101010] p-6 shadow-[0_24px_70px_-44px_rgba(0,0,0,0.95)] sm:p-7">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-yellow-100 text-yellow-700">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-yellow-300/12 text-yellow-300 ring-1 ring-yellow-300/20">
                     <Send className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-yellow-600">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-yellow-300">
                       Contact Channels
                     </p>
-                    <h2 className="mt-1 text-2xl font-semibold text-slate-950">
+                    <h2 className="mt-1 font-heading text-2xl font-semibold text-white">
                       Reach us your way
                     </h2>
                   </div>
@@ -187,29 +187,29 @@ const ContactPage = () => {
                         href={href}
                         target={isExternal ? "_blank" : undefined}
                         rel={isExternal ? "noreferrer" : undefined}
-                        className="group overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-4 transition-all duration-300 hover:border-yellow-300 hover:bg-white hover:shadow-[0_20px_50px_-34px_rgba(217,119,6,0.45)]"
+                        className="group overflow-hidden rounded-3xl border border-white/10 bg-black/35 p-4 transition-all duration-300 hover:border-yellow-300/70 hover:bg-white/[0.07] hover:shadow-[0_20px_50px_-34px_rgba(217,119,6,0.45)]"
                       >
                         <div className="flex items-start justify-between gap-4">
                           <div className="min-w-0 flex gap-3">
-                            <div className="mt-0.5 flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-yellow-600 ring-1 ring-black/5">
+                            <div className="mt-0.5 flex h-11 w-11 items-center justify-center rounded-2xl bg-yellow-300/10 text-yellow-300 ring-1 ring-yellow-300/20">
                               {createElement(contactIcons[key], {
                                 className: "h-5 w-5",
                               })}
                             </div>
                             <div className="min-w-0">
-                              <p className="text-base font-semibold text-slate-950">
+                              <p className="text-base font-semibold text-white">
                                 {label}
                               </p>
-                              <p className="mt-1 break-words text-sm leading-6 text-slate-600">
+                              <p className="mt-1 break-words text-sm leading-6 text-white/62">
                                 {description}
                               </p>
                             </div>
                           </div>
 
-                          <ArrowUpRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-yellow-600" />
+                          <ArrowUpRight className="h-4 w-4 shrink-0 text-white/35 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-yellow-300" />
                         </div>
 
-                        <p className="mt-4 text-sm font-medium text-yellow-700">
+                        <p className="mt-4 text-sm font-medium text-yellow-300">
                           {actionLabel}
                         </p>
                       </a>
@@ -218,7 +218,7 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              <div className="rounded-[30px] border border-black/5 bg-slate-950 p-6 text-white shadow-[0_24px_70px_-40px_rgba(15,23,42,0.6)] sm:p-7">
+              <div className="rounded-[30px] border border-white/10 bg-black p-6 text-white shadow-[0_24px_70px_-40px_rgba(0,0,0,0.9)] sm:p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-yellow-300">
                   Booking Notes
                 </p>
@@ -268,17 +268,17 @@ const ContactPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: 0.08 }}
-              className="min-w-0 scroll-mt-32 rounded-[32px] border border-black/5 bg-white p-6 shadow-[0_24px_70px_-40px_rgba(15,23,42,0.45)] sm:p-8"
+              className="min-w-0 scroll-mt-32 rounded-[32px] border border-white/10 bg-[#101010] p-6 shadow-[0_24px_70px_-44px_rgba(0,0,0,0.95)] sm:p-8"
             >
-              <div className="flex flex-col gap-4 border-b border-slate-200 pb-6 sm:flex-row sm:items-end sm:justify-between">
+              <div className="flex flex-col gap-4 border-b border-white/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-yellow-600">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-yellow-300">
                     Book Appointment
                   </p>
-                  <h2 className="mt-2 text-3xl font-semibold leading-tight text-slate-950">
+                  <h2 className="mt-2 font-heading text-3xl font-semibold leading-tight text-white">
                     Request a session
                   </h2>
-                  <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
+                  <p className="mt-3 max-w-2xl text-sm leading-7 text-white/64">
                     Share the key details here, and our team will follow up by
                     phone or WhatsApp to confirm the appointment.
                   </p>
@@ -286,7 +286,7 @@ const ContactPage = () => {
 
                 <Link
                   to="/#services"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-yellow-700 transition hover:text-yellow-800"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-yellow-300 transition hover:text-yellow-200"
                 >
                   View services first
                   <ArrowRight className="h-4 w-4" />
@@ -295,7 +295,7 @@ const ContactPage = () => {
 
               <form className="mt-8" onSubmit={handleSubmit}>
                 <div className="grid gap-5 md:grid-cols-2">
-                  <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                  <label className="flex flex-col gap-2 text-sm font-medium text-white/72">
                     Full name
                     <input
                       type="text"
@@ -303,11 +303,11 @@ const ContactPage = () => {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-yellow-400 focus:bg-white"
+                      className="w-full rounded-2xl border border-white/10 bg-black/45 px-4 py-3 text-sm text-white outline-none transition focus:border-yellow-300 focus:bg-black/70"
                     />
                   </label>
 
-                  <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                  <label className="flex flex-col gap-2 text-sm font-medium text-white/72">
                     Phone number
                     <input
                       type="tel"
@@ -315,29 +315,29 @@ const ContactPage = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-yellow-400 focus:bg-white"
+                      className="w-full rounded-2xl border border-white/10 bg-black/45 px-4 py-3 text-sm text-white outline-none transition focus:border-yellow-300 focus:bg-black/70"
                     />
                   </label>
 
-                  <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                  <label className="flex flex-col gap-2 text-sm font-medium text-white/72">
                     Email address
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-yellow-400 focus:bg-white"
+                      className="w-full rounded-2xl border border-white/10 bg-black/45 px-4 py-3 text-sm text-white outline-none transition focus:border-yellow-300 focus:bg-black/70"
                     />
                   </label>
 
-                  <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                  <label className="flex flex-col gap-2 text-sm font-medium text-white/72">
                     Service needed
                     <select
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-yellow-400 focus:bg-white"
+                      className="w-full rounded-2xl border border-white/10 bg-black/45 px-4 py-3 text-sm text-white outline-none transition focus:border-yellow-300 focus:bg-black/70"
                     >
                       <option value="">Select a service</option>
                       {appointmentServices.map((service) => (
@@ -348,7 +348,7 @@ const ContactPage = () => {
                     </select>
                   </label>
 
-                  <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                  <label className="flex flex-col gap-2 text-sm font-medium text-white/72">
                     Preferred date
                     <input
                       type="date"
@@ -356,42 +356,42 @@ const ContactPage = () => {
                       value={formData.preferredDate}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-yellow-400 focus:bg-white"
+                      className="w-full rounded-2xl border border-white/10 bg-black/45 px-4 py-3 text-sm text-white outline-none transition focus:border-yellow-300 focus:bg-black/70"
                     />
                   </label>
 
-                  <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
+                  <label className="flex flex-col gap-2 text-sm font-medium text-white/72">
                     Preferred time
                     <input
                       type="time"
                       name="preferredTime"
                       value={formData.preferredTime}
                       onChange={handleChange}
-                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-yellow-400 focus:bg-white"
+                      className="w-full rounded-2xl border border-white/10 bg-black/45 px-4 py-3 text-sm text-white outline-none transition focus:border-yellow-300 focus:bg-black/70"
                     />
                   </label>
                 </div>
 
-                <label className="mt-5 flex flex-col gap-2 text-sm font-medium text-slate-700">
+                <label className="mt-5 flex flex-col gap-2 text-sm font-medium text-white/72">
                   Additional notes
                   <textarea
                     name="notes"
                     value={formData.notes}
                     onChange={handleChange}
                     rows="5"
-                    className="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-6 text-slate-900 outline-none transition focus:border-yellow-400 focus:bg-white"
+                    className="w-full rounded-3xl border border-white/10 bg-black/45 px-4 py-3 text-sm leading-6 text-white outline-none transition focus:border-yellow-300 focus:bg-black/70"
                   />
                 </label>
 
                 {isSubmitted && (
-                  <div className="mt-6 rounded-3xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm leading-6 text-emerald-800">
+                  <div className="mt-6 rounded-3xl border border-yellow-300/30 bg-yellow-300/10 px-4 py-3 text-sm leading-6 text-yellow-100">
                     Appointment request received. Our team will contact you
                     shortly to confirm availability.
                   </div>
                 )}
 
                 <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="text-sm leading-6 text-slate-500">
+                  <p className="text-sm leading-6 text-white/55">
                     Submit your request and our team will follow up quickly to
                     confirm availability, answer your questions, and help you
                     take the next step with confidence.
