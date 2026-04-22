@@ -82,7 +82,10 @@ const ContactPage = () => {
               </span>
 
               <h1 className="mt-5 max-w-[12ch] font-heading text-[2.6rem] font-bold leading-[1.05] text-white sm:max-w-none sm:text-5xl lg:text-6xl">
-                Book an appointment with i-Able Rehabilitation.
+                Book an appointment with{" "}
+                <span className="font-[serif] font-semibold italic text-yellow-300">
+                  i-Able Rehabilitation.
+                </span>
               </h1>
 
               <p className="mt-5 max-w-2xl text-base leading-8 text-white/70 lg:text-lg">

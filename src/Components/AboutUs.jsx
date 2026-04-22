@@ -62,9 +62,9 @@ const AboutSection = () => {
               Our Aim
             </span>
 
-            <h2 className="font-heading lg:text-3xl text-4xl lg:text-5xl font-bold text-white mt-3 mb-5 leading-tight">
+            <h2 className="font-[sans)] lg:text-3xl text-4xl lg:text-5xl font-bold text-white mt-3 mb-5 leading-tight">
               Advancing{" "}
-              <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent italic">
+              <span className="font-[serif] font-semibold italic bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
                 Functional Independence
               </span>{" "}
               Through Coordinated Rehabilitation

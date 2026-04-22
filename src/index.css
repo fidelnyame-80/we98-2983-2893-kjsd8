@@ -2,7 +2,9 @@
 
 @layer base {
   :root {
-    font-family: "Manrope", Inter, system-ui, sans-serif;
+    --font-body: "Manrope", Inter, system-ui, sans-serif;
+    --font-accent: "Cormorant Garamond", Garamond, Georgia, serif;
+    font-family: var(--font-body);
     color: #f8fafc;
     background: #050505;
   }
@@ -20,7 +22,7 @@
       radial-gradient(circle at top, rgba(234, 179, 8, 0.13), transparent 32rem),
       #050505;
     color: #f8fafc;
-    font-family: "Manrope", Inter, system-ui, sans-serif;
+    font-family: var(--font-body);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
   }
@@ -28,7 +30,8 @@
   h1,
   h2,
   h3 {
-    font-family: "Lora", Georgia, serif;
+    font-family: var(--font-body);
+    letter-spacing: 0;
   }
 
   button,

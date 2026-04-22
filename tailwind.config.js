@@ -2,8 +2,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["Lora", "Georgia", "serif"],
-        serif: ["Lora", "Georgia", "serif"],
+        heading: ["Manrope", "Inter", "sans-serif"],
+        serif: ["Cormorant Garamond", "Garamond", "Georgia", "serif"],
         body: ["Manrope", "Inter", "sans-serif"],
         sans: ["Manrope", "Inter", "sans-serif"],
       },

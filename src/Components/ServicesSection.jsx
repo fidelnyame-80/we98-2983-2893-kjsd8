@@ -112,7 +112,7 @@ const ServicesSection = () => {
 
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 mb-3 leading-tight">
             Rehabilitation services that connect{" "}
-            <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent italic">
+            <span className="font-[serif] font-semibold italic bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
               people, systems, and outcomes
             </span>
           </h2>

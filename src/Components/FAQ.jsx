@@ -96,13 +96,13 @@ const OutcomesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <span className="text-xl font-semibold tracking-widest uppercase text-yellow-300">
+          <span className="text-xl font-semibold tracking-widest uppercase text-yellow-300 font-[serif] ">
             Expected Outcomes
           </span>
 
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 mb-3">
             From coordinated inputs to{" "}
-            <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent italic">
+            <span className="font-[serif] font-semibold italic bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
               long-term impact
             </span>
           </h2>

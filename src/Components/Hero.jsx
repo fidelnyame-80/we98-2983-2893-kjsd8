@@ -31,9 +31,9 @@ const HeroSection = () => {
         >
          
 
-          <h1 className="max-w-4xl font-heading text-4xl font-bold leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl mb-4">
+          <h1 className="max-w-4xl font-heading text-4xl font-bold leading-[1.02] sm:text-5xl lg:text-6xl xl:text-7xl mb-4">
             i-Able{" "}
-            <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent italic">
+            <span className="font-[serif] font-semibold italic bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
               Rehabilitation
             </span>
           </h1>
