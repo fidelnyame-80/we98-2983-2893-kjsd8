@@ -18,7 +18,7 @@ const focusAreas = [
     description:
       "Teacher and caregiver training that helps children participate fully in mainstream classrooms.",
     icon: Users,
-    image: Images.educationSupportImage,
+    image: Images.inclusiveEducation,
     imageAlt:
       "A caregiver supporting inclusive participation during rehabilitation.",
   },
@@ -127,7 +127,7 @@ const AboutSection = () => {
                   <img
                     src={image}
                     alt={imageAlt}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 object-[0%30%] "
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   <div className="absolute left-4 bottom-4 flex h-10 w-10 items-center justify-center rounded-full bg-black/85 shadow-sm ring-1 ring-yellow-300/35 backdrop-blur-sm">
