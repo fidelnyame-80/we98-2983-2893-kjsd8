@@ -18,7 +18,7 @@ const focusAreas = [
     description:
       "Teacher and caregiver training that helps children participate fully in mainstream classrooms.",
     icon: Users,
-    image: Images.educationSupportImage,
+    image: Images.inclusiveEducation,
     imageAlt:
       "A caregiver supporting inclusive participation during rehabilitation.",
   },
@@ -118,13 +118,13 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-yellow-300 hover:shadow-md transition-all duration-300 group"
+                className="overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-yellow-300 hover:shadow-md transition-all duration-300 group "
               >
                 <div className="relative h-28 overflow-hidden bg-gray-100">
                   <img
                     src={image}
                     alt={imageAlt}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 object-[0%30%]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/5 to-transparent" />
                   <div className="absolute left-4 bottom-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/95 shadow-sm">
