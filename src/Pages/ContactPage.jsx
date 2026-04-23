@@ -37,7 +37,9 @@ const initialFormData = {
 
 const ContactPage = () => {
   const [formData, setFormData] = useState(initialFormData);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
+  const isSubmitting = submitStatus === "loading";
 
   const handleChange = ({ target: { name, value } }) => {
     setFormData((currentData) => ({
@@ -45,15 +47,44 @@ const ContactPage = () => {
       [name]: value,
     }));
 
-    if (isSubmitted) {
-      setIsSubmitted(false);
+    if (submitStatus !== "idle") {
+      setSubmitStatus("idle");
+      setSubmitMessage("");
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsSubmitted(true);
-    setFormData(initialFormData);
+    setSubmitStatus("loading");
+    setSubmitMessage("");
+
+    try {
+      const response = await fetch("/api/appointments", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok || !result?.success) {
+        throw new Error(
+          result?.error || "Unable to submit your appointment request.",
+        );
+      }
+
+      setSubmitStatus("success");
+      setSubmitMessage(
+        "Appointment request received. Our team will contact you shortly to confirm availability.",
+      );
+      setFormData(initialFormData);
+    } catch (error) {
+      setSubmitStatus("error");
+      setSubmitMessage(
+        error.message || "Unable to submit your appointment request.",
+      );
+    }
   };
 
   return (
@@ -386,10 +417,18 @@ const ContactPage = () => {
                   />
                 </label>
 
-                {isSubmitted && (
-                  <div className="mt-6 rounded-3xl border border-yellow-300/30 bg-yellow-300/10 px-4 py-3 text-sm leading-6 text-yellow-100">
-                    Appointment request received. Our team will contact you
-                    shortly to confirm availability.
+                {submitStatus !== "idle" && (
+                  <div
+                    aria-live="polite"
+                    className={`mt-6 rounded-3xl border px-4 py-3 text-sm leading-6 ${
+                      submitStatus === "error"
+                        ? "border-red-300/30 bg-red-500/10 text-red-100"
+                        : "border-yellow-300/30 bg-yellow-300/10 text-yellow-100"
+                    }`}
+                  >
+                    {submitStatus === "loading"
+                      ? "Submitting your appointment request..."
+                      : submitMessage}
                   </div>
                 )}
 
@@ -402,9 +441,10 @@ const ContactPage = () => {
 
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90 sm:w-auto"
+                    disabled={isSubmitting}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-65 sm:w-auto"
                   >
-                    Submit Request
+                    {isSubmitting ? "Submitting..." : "Submit Request"}
                     <ArrowRight className="h-4 w-4" />
                   </button>
                 </div>
