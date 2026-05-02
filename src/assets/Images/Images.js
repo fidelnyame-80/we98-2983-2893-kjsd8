@@ -10,6 +10,8 @@ import inclusiveEducation from "./inclusive-edu.png"
 import elderlyCare from "./elderly-care.png"
 import interdisciplinaryCare from "./interdisciplinary.jpeg"
 import caregiverEmpowerment from "./caregiver.png"
+import directorPortrait from "./ceo-portrait.jpg"
+import assistantDirectorPortrait from "./assistant-director-portrait.png"
 
 export const Images = {
   childRehabImage, 
@@ -24,4 +26,6 @@ export const Images = {
   elderlyCare, //elderly care and functional
   interdisciplinaryCare, // interdisciplinaryCare
   caregiverEmpowerment, //caregiver empowerment
+  directorPortrait,
+  assistantDirectorPortrait,
 };

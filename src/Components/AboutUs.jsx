@@ -150,6 +150,7 @@ const AboutSection = () => {
             ))}
           </MotionDiv>
         </div>
+
       </div>
     </section>
   );
