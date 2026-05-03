@@ -5,6 +5,7 @@ import {
   ArrowUpRight,
   BadgeCheck,
   CalendarDays,
+  ChevronDown,
   Clock3,
   MessageCircle,
   PhoneCall,
@@ -14,8 +15,11 @@ import { Link } from "react-router-dom";
 import { Images } from "../assets/Images/Images";
 import {
   bookingHighlights,
+  callContacts,
   contactMethods,
+  appointmentSessionTypes,
   appointmentServices,
+  whatsappContact,
 } from "../data/contactData";
 
 const MotionDiv = motion.div;
@@ -25,11 +29,18 @@ const contactIcons = {
   call: PhoneCall,
 };
 
+const selectFieldClass =
+  "w-full appearance-none rounded-2xl border border-white/10 bg-black/45 px-4 py-3 pr-14 text-sm text-white outline-none transition focus:border-yellow-300 focus:bg-black/70";
+
+const selectIconClass =
+  "pointer-events-none absolute right-5 top-1/2 h-4 w-4 -translate-y-1/2 text-white/70";
+
 const initialFormData = {
   fullName: "",
   phone: "",
   email: "",
   service: "",
+  sessionType: "",
   preferredDate: "",
   preferredTime: "",
   notes: "",
@@ -142,8 +153,8 @@ const ContactPage = () => {
                     WhatsApp support
                   </p>
                   <p className="mt-1 text-sm leading-6 text-white/60">
-                    Message us at +233 20 986 5603 for quick appointment
-                    support.
+                    Message us at {whatsappContact.display} for quick
+                    appointment support.
                   </p>
                 </div>
 
@@ -214,41 +225,47 @@ const ContactPage = () => {
                 </div>
 
                 <div className="mt-6 grid gap-4">
-                  {contactMethods.map(
-                    ({ key, label, href, description, actionLabel, isExternal }) => (
-                      <a
-                        key={key}
-                        href={href}
-                        target={isExternal ? "_blank" : undefined}
-                        rel={isExternal ? "noreferrer" : undefined}
-                        className="group overflow-hidden rounded-3xl border border-white/10 bg-black/35 p-4 transition-all duration-300 hover:border-yellow-300/70 hover:bg-white/[0.07] hover:shadow-[0_20px_50px_-34px_rgba(217,119,6,0.45)]"
-                      >
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="min-w-0 flex gap-3">
-                            <div className="mt-0.5 flex h-11 w-11 items-center justify-center rounded-2xl bg-yellow-300/10 text-yellow-300 ring-1 ring-yellow-300/20">
-                              {createElement(contactIcons[key], {
-                                className: "h-5 w-5",
-                              })}
-                            </div>
-                            <div className="min-w-0">
-                              <p className="text-base font-semibold text-white">
-                                {label}
-                              </p>
-                              <p className="mt-1 break-words text-sm leading-6 text-white/62">
-                                {description}
-                              </p>
-                            </div>
+                  {contactMethods.map(({ key, label, description, actions }) => (
+                    <div
+                      key={key}
+                      className="overflow-hidden rounded-3xl border border-white/10 bg-black/35 p-4"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="min-w-0 flex gap-3">
+                          <div className="mt-0.5 flex h-11 w-11 items-center justify-center rounded-2xl bg-yellow-300/10 text-yellow-300 ring-1 ring-yellow-300/20">
+                            {createElement(contactIcons[key], {
+                              className: "h-5 w-5",
+                            })}
                           </div>
-
-                          <ArrowUpRight className="h-4 w-4 shrink-0 text-white/35 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-yellow-300" />
+                          <div className="min-w-0">
+                            <p className="text-base font-semibold text-white">
+                              {label}
+                            </p>
+                            <p className="mt-1 break-words text-sm leading-6 text-white/62">
+                              {description}
+                            </p>
+                          </div>
                         </div>
 
-                        <p className="mt-4 text-sm font-medium text-yellow-300">
-                          {actionLabel}
-                        </p>
-                      </a>
-                    ),
-                  )}
+                        <ArrowUpRight className="h-4 w-4 shrink-0 text-white/35" />
+                      </div>
+
+                      <div className="mt-4 flex flex-col gap-3">
+                        {actions.map(({ label: actionLabel, href, isExternal }) => (
+                          <a
+                            key={actionLabel}
+                            href={href}
+                            target={isExternal ? "_blank" : undefined}
+                            rel={isExternal ? "noreferrer" : undefined}
+                            className="group inline-flex items-center justify-between gap-3 rounded-2xl border border-yellow-300/18 bg-white/[0.04] px-4 py-3 text-sm font-medium text-yellow-300 transition-all duration-300 hover:border-yellow-300/60 hover:bg-white/[0.07] hover:text-yellow-200"
+                          >
+                            <span>{actionLabel}</span>
+                            <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -278,21 +295,32 @@ const ContactPage = () => {
                   ))}
                 </div>
 
-                <a
-                  href="tel:+233209865603"
-                  className="mt-6 flex items-start gap-3 rounded-3xl border border-white/10 bg-white/5 p-4 transition hover:border-yellow-300/40 hover:bg-white/10"
-                >
-                  <PhoneCall className="mt-0.5 h-5 w-5 shrink-0 text-yellow-300" />
-                  <div>
-                    <p className="text-sm font-semibold text-white">
-                      +233 20 986 5603
-                    </p>
-                    <p className="mt-1 text-sm leading-6 text-white/70">
-                      Use this number for both WhatsApp messages and direct
-                      calls.
-                    </p>
+                <div className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-4">
+                  <div className="flex items-start gap-3">
+                    <PhoneCall className="mt-0.5 h-5 w-5 shrink-0 text-yellow-300" />
+                    <div>
+                      <p className="text-sm font-semibold text-white">
+                        Direct call lines
+                      </p>
+                      <p className="mt-1 text-sm leading-6 text-white/70">
+                        Use either number for direct calls with our team.
+                      </p>
+                    </div>
                   </div>
-                </a>
+
+                  <div className="mt-4 flex flex-col gap-3">
+                    {callContacts.map(({ display, digits }) => (
+                      <a
+                        key={digits}
+                        href={`tel:+${digits}`}
+                        className="inline-flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm font-medium text-white transition hover:border-yellow-300/40 hover:bg-white/10 hover:text-yellow-200"
+                      >
+                        <span>{display}</span>
+                        <ArrowUpRight className="h-4 w-4 shrink-0" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </MotionDiv>
 
@@ -365,21 +393,45 @@ const ContactPage = () => {
                   </label>
 
                   <label className="flex flex-col gap-2 text-sm font-medium text-white/72">
+                    Session type
+                    <div className="relative">
+                      <select
+                        name="sessionType"
+                        value={formData.sessionType}
+                        onChange={handleChange}
+                        required
+                        className={selectFieldClass}
+                      >
+                        <option value="">Select session type</option>
+                        {appointmentSessionTypes.map((sessionType) => (
+                          <option key={sessionType} value={sessionType}>
+                            {sessionType}
+                          </option>
+                        ))}
+                      </select>
+                      <ChevronDown className={selectIconClass} />
+                    </div>
+                  </label>
+
+                  <label className="flex flex-col gap-2 text-sm font-medium text-white/72 md:col-span-2">
                     Service needed
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-2xl border border-white/10 bg-black/45 px-4 py-3 text-sm text-white outline-none transition focus:border-yellow-300 focus:bg-black/70"
-                    >
-                      <option value="">Select a service</option>
-                      {appointmentServices.map((service) => (
-                        <option key={service} value={service}>
-                          {service}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="relative">
+                      <select
+                        name="service"
+                        value={formData.service}
+                        onChange={handleChange}
+                        required
+                        className={selectFieldClass}
+                      >
+                        <option value="">Select a service</option>
+                        {appointmentServices.map((service) => (
+                          <option key={service} value={service}>
+                            {service}
+                          </option>
+                        ))}
+                      </select>
+                      <ChevronDown className={selectIconClass} />
+                    </div>
                   </label>
 
                   <label className="flex flex-col gap-2 text-sm font-medium text-white/72">

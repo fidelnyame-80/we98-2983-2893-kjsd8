@@ -26,12 +26,14 @@ const collaborativeApproach = [
 
 const footerContactLinks = [
   { label: "Book Appointment", to: "/contact#appointment-form", isInternal: true },
-  ...contactMethods.map(({ key, label, href, isExternal }) => ({
-    key,
-    label,
-    href,
-    isExternal,
-  })),
+  ...contactMethods.flatMap(({ key, actions }) =>
+    actions.map(({ label, href, isExternal }, index) => ({
+      key: `${key}-${index}`,
+      label,
+      href,
+      isExternal,
+    })),
+  ),
 ];
 
 const Footer = () => {

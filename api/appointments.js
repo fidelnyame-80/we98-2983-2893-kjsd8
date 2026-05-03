@@ -7,7 +7,14 @@ const pool = process.env.DATABASE_URL
     })
   : null;
 
-const requiredFields = ["fullName", "phone", "service", "preferredDate"];
+const requiredFields = [
+  "fullName",
+  "phone",
+  "service",
+  "sessionType",
+  "preferredDate",
+];
+const validSessionTypes = new Set(["Online", "In person"]);
 
 const normalizeText = (value) =>
   typeof value === "string" ? value.trim() : "";
@@ -15,6 +22,8 @@ const normalizeText = (value) =>
 const isDateValue = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value);
 
 const isTimeValue = (value) => !value || /^\d{2}:\d{2}$/.test(value);
+
+const isSessionTypeValue = (value) => validSessionTypes.has(value);
 
 const readBody = async (req) => {
   if (req.body) {
@@ -40,11 +49,17 @@ const ensureAppointmentsTable = async () => {
       phone TEXT NOT NULL,
       email TEXT,
       service TEXT NOT NULL,
+      session_type TEXT NOT NULL,
       preferred_date DATE NOT NULL,
       preferred_time TIME,
       notes TEXT,
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
+  `);
+
+  await pool.query(`
+    ALTER TABLE appointment_requests
+    ADD COLUMN IF NOT EXISTS session_type TEXT NOT NULL DEFAULT 'In person'
   `);
 };
 
@@ -72,6 +87,7 @@ export default async function handler(req, res) {
       phone: normalizeText(body.phone),
       email: normalizeText(body.email),
       service: normalizeText(body.service),
+      sessionType: normalizeText(body.sessionType),
       preferredDate: normalizeText(body.preferredDate),
       preferredTime: normalizeText(body.preferredTime),
       notes: normalizeText(body.notes),
@@ -87,12 +103,14 @@ export default async function handler(req, res) {
     }
 
     if (
+      !isSessionTypeValue(appointment.sessionType) ||
       !isDateValue(appointment.preferredDate) ||
       !isTimeValue(appointment.preferredTime)
     ) {
       return res.status(400).json({
         success: false,
-        error: "Please enter a valid preferred date and time.",
+        error:
+          "Please choose a valid session type and enter a valid preferred date and time.",
       });
     }
 
@@ -105,11 +123,12 @@ export default async function handler(req, res) {
           phone,
           email,
           service,
+          session_type,
           preferred_date,
           preferred_time,
           notes
         )
-        VALUES ($1, $2, $3, $4, $5, $6, $7)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
         RETURNING id, created_at
       `,
       [
@@ -117,6 +136,7 @@ export default async function handler(req, res) {
         appointment.phone,
         appointment.email || null,
         appointment.service,
+        appointment.sessionType,
         appointment.preferredDate,
         appointment.preferredTime || null,
         appointment.notes || null,

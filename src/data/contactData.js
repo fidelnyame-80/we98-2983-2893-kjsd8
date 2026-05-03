@@ -1,21 +1,39 @@
+export const whatsappContact = {
+  display: "+233 20 986 5603",
+  digits: "233209865603",
+};
+
+export const secondaryCallContact = {
+  display: "+233 24 456 2172",
+  digits: "233244562172",
+};
+
+export const callContacts = [whatsappContact, secondaryCallContact];
+
 export const contactMethods = [
   {
     key: "whatsapp",
     label: "WhatsApp",
-    href: "https://wa.me/233209865603",
     description:
       "Send us a WhatsApp message for appointment availability, service guidance, and quick support from the i-Able team.",
-    actionLabel: "WhatsApp +233 20 986 5603",
-    isExternal: true,
+    actions: [
+      {
+        label: `WhatsApp ${whatsappContact.display}`,
+        href: `https://wa.me/${whatsappContact.digits}`,
+        isExternal: true,
+      },
+    ],
   },
   {
     key: "call",
     label: "Call",
-    href: "tel:+233209865603",
     description:
       "Speak directly with our team for help choosing the right service and booking a convenient appointment time.",
-    actionLabel: "Call +233 20 986 5603",
-    isExternal: false,
+    actions: callContacts.map(({ display, digits }) => ({
+      label: `Call ${display}`,
+      href: `tel:+${digits}`,
+      isExternal: false,
+    })),
   },
 ];
 
@@ -27,6 +45,8 @@ export const appointmentServices = [
   "Vocational and return-to-work rehabilitation",
   "Caregiver empowerment and community engagement",
 ];
+
+export const appointmentSessionTypes = ["Online", "In person"];
 
 export const bookingHighlights = [
   {

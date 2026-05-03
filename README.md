@@ -100,6 +100,7 @@ The form stores these fields in React state:
 - `phone`
 - `email`
 - `service`
+- `sessionType`
 - `preferredDate`
 - `preferredTime`
 - `notes`
@@ -146,6 +147,7 @@ Required fields:
 - `fullName`
 - `phone`
 - `service`
+- `sessionType`
 - `preferredDate`
 
 Optional fields:
@@ -188,6 +190,7 @@ CREATE TABLE IF NOT EXISTS appointment_requests (
   phone TEXT NOT NULL,
   email TEXT,
   service TEXT NOT NULL,
+  session_type TEXT NOT NULL,
   preferred_date DATE NOT NULL,
   preferred_time TIME,
   notes TEXT,
@@ -203,6 +206,7 @@ The insert query maps frontend fields to database columns like this:
 | `phone` | `phone` |
 | `email` | `email` |
 | `service` | `service` |
+| `sessionType` | `session_type` |
 | `preferredDate` | `preferred_date` |
 | `preferredTime` | `preferred_time` |
 | `notes` | `notes` |
@@ -215,7 +219,7 @@ Change form labels, inputs, or submit UI:
 src/Pages/ContactPage.jsx
 ```
 
-Change service dropdown options:
+Change service or session dropdown options:
 
 ```text
 src/data/contactData.js
