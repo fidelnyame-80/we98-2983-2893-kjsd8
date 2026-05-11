@@ -4,8 +4,12 @@ const pool = process.env.DATABASE_URL
   ? new Pool({
       connectionString: process.env.DATABASE_URL,
       max: 1,
+      idleTimeoutMillis: 10000,
+      connectionTimeoutMillis: 10000,
     })
   : null;
+
+let schemaReadyPromise;
 
 const requiredFields = [
   "fullName",
@@ -27,7 +31,17 @@ const isSessionTypeValue = (value) => validSessionTypes.has(value);
 
 const readBody = async (req) => {
   if (req.body) {
-    return typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+    if (typeof req.body !== "string") {
+      return req.body;
+    }
+
+    try {
+      return JSON.parse(req.body);
+    } catch {
+      const error = new Error("Request body must be valid JSON.");
+      error.statusCode = 400;
+      throw error;
+    }
   }
 
   const chunks = [];
@@ -37,8 +51,17 @@ const readBody = async (req) => {
   }
 
   const rawBody = Buffer.concat(chunks).toString("utf8");
+  if (!rawBody) {
+    return {};
+  }
 
-  return rawBody ? JSON.parse(rawBody) : {};
+  try {
+    return JSON.parse(rawBody);
+  } catch {
+    const error = new Error("Request body must be valid JSON.");
+    error.statusCode = 400;
+    throw error;
+  }
 };
 
 const ensureAppointmentsTable = async () => {
@@ -61,6 +84,17 @@ const ensureAppointmentsTable = async () => {
     ALTER TABLE appointment_requests
     ADD COLUMN IF NOT EXISTS session_type TEXT NOT NULL DEFAULT 'In person'
   `);
+};
+
+const ensureAppointmentsSchema = () => {
+  if (!schemaReadyPromise) {
+    schemaReadyPromise = ensureAppointmentsTable().catch((error) => {
+      schemaReadyPromise = undefined;
+      throw error;
+    });
+  }
+
+  return schemaReadyPromise;
 };
 
 export default async function handler(req, res) {
@@ -114,7 +148,7 @@ export default async function handler(req, res) {
       });
     }
 
-    await ensureAppointmentsTable();
+    await ensureAppointmentsSchema();
 
     const { rows } = await pool.query(
       `
@@ -149,6 +183,13 @@ export default async function handler(req, res) {
     });
   } catch (error) {
     console.error("APPOINTMENT SUBMISSION ERROR:", error);
+
+    if (error.statusCode) {
+      return res.status(error.statusCode).json({
+        success: false,
+        error: error.message,
+      });
+    }
 
     return res.status(500).json({
       success: false,
